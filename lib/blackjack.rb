@@ -37,7 +37,7 @@ def initial_round
   card_total
 end
 
-def hit?(card_total)
+def hit?(user_hand)
   # code hit? here
   prompt_user
   user_input = get_user_input
@@ -47,7 +47,13 @@ def hit?(card_total)
     user_input = get_user_input
   end
   if user_input == 'h'
-    new_card
+    new_card = deal_card
+    user_hand += new_card
+    elsif user_input == 's'
+    user_hand
+  end
+  user_hand
+end
 
 def invalid_command
   # code invalid_command here
